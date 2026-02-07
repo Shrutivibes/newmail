@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💌New Mail</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            background-color: beige;
+            background-image: 
+                radial-gradient(circle at 1px 1px, rgba(0,0,0,0.1) 1px, transparent 0);
+            background-size: 20px 20px;
+            background-repeat: repeat;
+            color: #000;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .masthead {
+            border-bottom: 2px solid #000;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .masthead h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #0e0d0d;
+            margin: 0;
+        }
+        .masthead p {
+            font-size: 0.9em;
+            color: #000;
+            margin: 0;
+        }
+        .audio-container {
+            text-align: center;
+        }
+       
+        audio {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.2em;
+            padding: auto;
+            border: none;
+            background-color:none;
+            color: #f08e8e;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 30px;
+            box-shadow: 0px 4px 8px rgba(243, 218, 127, 0.658);
+        }
+        @media (max-width: 600px) {
+            .masthead h1 {
+                font-size: 2em;
+            }
+            .letter, .handwritten {
+                max-width: 100%;
+            }
+            audio {
+                width: 80px;
+            }
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+        .letter {
+            width: 200px;
+            height: 120px;
+            margin: 20px auto;
+            background-color: #fff;
+            border: 1px solid #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+        }
+        .letter .heart {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+        .letter .text {
+            font-size: 0.9em;
+            font-style: italic;
+        }
+        .handwritten {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border: 1px solid #000;
+        }
+        button {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: none;
+            background-color: #fff;
+            color: #000;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        button:hover {
+            background-color: #eba0a0;
+        }
+        #yes {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: none;
+            background-color: #fff;
+            color: #000;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        #yes:hover {
+            background-color: #eba0a0;
+            color: #fff;
+        }
+        #no {
+            position: absolute;
+        }
+        .hidden {
+            display: none;
+        }
+        #celebration {
+            margin-top: 30px;
+        }
+        #celebration h2 {
+            font-size: 1em;
+            font-style: italic;
+            color: #000;
+        }
+        img {
+            max-width: 300px;
+            height: auto;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="masthead">
+        <h1>The Daily Love Gazette</h1>
+        <div class="audio-container">
+            <audio id="bg-music" controls loop>
+        <source src="Calum_Scott_-_You_Are_The_Reason_(mp3.pm).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+    </div>
+
+
+    <!-- Page 1 -->
+    <div id="page1" class="page active">
+        <div class="article">
+            <h2>You've got a mail</h2>
+            <p style="font-style: italic;">for maximum feels, press play on the audio above</p>
+            <div class="letter" id="letter">
+                <div class="heart">💌</div>
+                <div class="text">Open with Love</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2 -->
+    <div id="page2" class="page">
+        <div class="article">
+            <h3>Disclaimer: No long paragraphs were harmed in the making of this.</h3>
+            <h3> Emotionally soft content ahead.</h3>
+            <button id="next2" style="text-transform: none;">Ready?</button>
+        </div>
+    </div>
+
+    <!-- Page 3 -->
+    <div id="page3" class="page">
+        <div class="article">
+            <img src="IMG_5605.PNG" width="500px" alt="Handwritten Letter: A Promise from My Heart" class="handwritten">
+            <button id="next3">open</button>
+        </div>
+    </div>
+
+    <!-- Page 4 -->
+    <div id="page4" class="page">
+        <div class="article">
+            <h3 style="margin-bottom: 0%;">So here it is-</h3>
+            <h3 style="margin-top: 0%;">will you be my Valentine?</h3>
+            <button id="yes">Yes</button>
+            <button id="no">No</button>
+            <div id="celebration" class="hidden">
+                <h4 style="margin-bottom: 0%; font-style: italic;">That made me smile.</h4>
+                    <h4 style="margin-top: 0%; font-style: italic;"> hope it did the same for you.</h4>
+                <img src="video-output-0ACBAE9F-6790-4B4C-9496-D841E8F391BD-1.gif" style="width: 200px;" alt="Happy celebration GIF">
+                <p>over to you now, my pretty boy. We'll plan it together</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Letter click to go to Page 2
+        const letter = document.getElementById('letter');
+        letter.addEventListener('click', () => {
+            showPage(1);
+        });
+
+        // Page navigation
+        const pages = ['page1', 'page2', 'page3', 'page4'];
+        let currentPage = 0;
+
+        document.getElementById('next2').addEventListener('click', () => showPage(2));
+        document.getElementById('next3').addEventListener('click', () => showPage(3));
+
+        function showPage(index) {
+            document.getElementById(pages[currentPage]).classList.remove('active');
+            currentPage = index;
+            document.getElementById(pages[currentPage]).classList.add('active');
+        }
+
+        // Persistent audio
+        const audio = document.getElementById('bg-music');
+        const savedTime = localStorage.getItem('audioCurrentTime');
+        if (savedTime) {
+            audio.currentTime = parseFloat(savedTime);
+        }
+        audio.addEventListener('loadedmetadata', () => {
+            audio.play().catch(() => {
+                // Autoplay blocked, user can click play
+            });
+        });
+        audio.addEventListener('timeupdate', () => {
+            localStorage.setItem('audioCurrentTime', audio.currentTime);
+        });
+
+        // Movable No button
+        const noButton = document.getElementById('no');
+        const yesButton = document.getElementById('yes');
+        const celebration = document.getElementById('celebration');
+
+        function moveNoButton() {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 100);
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        }
+
+        noButton.addEventListener('mouseover', moveNoButton);
+        noButton.addEventListener('click', moveNoButton);
+        document.addEventListener('mousemove', (e) => {
+            const rect = noButton.getBoundingClientRect();
+            const buttonCenterX = rect.left + rect.width / 2;
+            const buttonCenterY = rect.top + rect.height / 2;
+            const distance = Math.sqrt((e.clientX - buttonCenterX) ** 2 + (e.clientY - buttonCenterY) ** 2);
+            if (distance < 50) {
+                moveNoButton();
+            }
+        });
+
+        yesButton.addEventListener('click', () => {
+            celebration.classList.remove('hidden');
+            yesButton.style.display = 'none';
+            noButton.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
